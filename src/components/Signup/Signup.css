@@ -1,0 +1,143 @@
+.signup-container {
+  max-width: 520px;
+  margin: 100px auto;
+  padding: 2.5rem 2rem;
+  background: linear-gradient(to bottom right, #fdfbfb, #ebedee);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.3s ease;
+}
+
+.signup-container h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  color: #4a4e69;
+  margin-bottom: 2rem;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.signup-form label {
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 0.3rem;
+}
+
+.signup-form input,
+.signup-form select {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  font-size: 1rem;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.signup-form input:focus,
+.signup-form select:focus {
+  border-color: #6c63ff;
+  box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.1);
+  outline: none;
+}
+
+/* Name fields stacked vertically */
+.name-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Ensure each field block spans full width */
+.name-fields div {
+  width: 100%;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+.checkbox-container input {
+  margin-top: 0.3rem;
+}
+
+.checkbox-container a {
+  color: #6c63ff;
+  text-decoration: underline;
+}
+
+.signup-form button {
+  margin-top: 1.5rem;
+  padding: 12px;
+  background: linear-gradient(135deg, #6c63ff, #857eff);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  width: 100%;
+}
+
+.signup-form button:hover {
+  background: linear-gradient(135deg, #574fd6, #6c63ff);
+}
+
+.login-link {
+  text-align: center;
+  margin-top: 1.8rem;
+  font-size: 0.95rem;
+}
+
+.login-link a {
+  color: #6c63ff;
+  text-decoration: underline;
+}
+
+.success-message {
+  text-align: center;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  border-radius: 12px;
+  font-weight: 500;
+  animation: fadeIn 0.6s ease-in;
+}
+
+.error-message {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+  padding: 0.75rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  text-align: center;
+  animation: shake 0.3s ease-in-out;
+}
+
+/* Animations */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
