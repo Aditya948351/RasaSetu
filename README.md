@@ -12,7 +12,7 @@
   
 <p align="center">
   🔗 <b>APIs Deployed via Render</b> | <a href="https://github.com/Aditya948351/Emotions_API" target="_blank">GitHub Repo</a><br>
-  <a href="https://byte-verse22-2ets9ae7m-kaustubhs-projects-add60962.vercel.app" align="center">Deployment_Link</a>
+  <a href="https://rasasetu-margvedha.netlify.app/" align="center">Deployment_Link</a>
   <h3 align="center">We've Used UnsplashAPI</h3>
 </p>
 
