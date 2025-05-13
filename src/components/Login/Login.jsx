@@ -40,7 +40,7 @@ const Login = ({ setIsLoggedIn }) => {
 
   return (
     <div className="login-container">
-      <h2>Welcome Back 🚀</h2>
+      <h2>Welcome Back 😊</h2>
       <form onSubmit={handleSubmit} aria-labelledby="login-form">
         {/* Error message with shake animation */}
         {error && <p className="error-message">{error}</p>}
