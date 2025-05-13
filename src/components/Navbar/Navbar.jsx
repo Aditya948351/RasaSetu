@@ -47,7 +47,7 @@ const Navbar = () => {
       <Link to="/" onClick={toggleMenu} className="navbar-logo">
         <Link to="/" onClick={toggleMenu} className="navbar-logo">
           <div className='logo-wrapper'>
-            <img src="./src/assets/RasaSetu-Icon.jpg" alt="RasaSetu Logo" className="navbar-logo-img" />
+            <img src="https://github.com/Aditya948351/RasaSetu/blob/main/src/assets/RasaSetu-Icon.jpg?raw=true" alt="RasaSetu Logo" className="navbar-logo-img" />
           </div>  
         </Link>
       </Link>
