@@ -53,7 +53,11 @@ const Navbar = () => {
       </Link>
 
       <ul className={`navbar-links ${isMobileMenuOpen ? 'open' : ''}`}>
-        <li><Link to="/" onClick={toggleMenu}>Home</Link></li>
+        <li><Link to="/" onClick={toggleMenu} className="navbar-logo">
+  <div className='logo-wrapper'>
+    <img src="..." alt="RasaSetu Logo" className="navbar-logo-img" />
+  </div>
+</Link></li>
         <li><Link to="/emotionalspectrum" onClick={toggleMenu} className={!user ? 'disabled' : ''}>Emotional Control</Link></li>
         <li><Link to="/mood" onClick={toggleMenu} className={!user ? 'disabled' : ''}>Mood Selector</Link></li>
         <li><Link to="/express-mode" onClick={toggleMenu} className={!user ? 'disabled' : ''}>Soothing ASMR</Link></li>
