@@ -8,74 +8,69 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [user, setUser] = useState(null);
 
-  // Handle login state and user info
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
-      if (user) {
-        setUser(user);  // Set user when logged in
-      } else {
-        setUser(null);  // Clear user when logged out
-      }
+      setUser(user || null);
     });
     return () => unsubscribe();
   }, []);
 
-  // Logout function
   const handleLogout = () => {
-    signOut(auth);
-    setUser(null);
+    signOut(auth).then(() => setUser(null));
   };
 
   const toggleMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
+    setIsMobileMenuOpen((prev) => !prev);
   };
 
   return (
     <nav className="navbar">
-      <Link to="/" onClick={toggleMenu}><div className="navbar-logo">RasaSetu</div></Link>
+      <Link to="/" onClick={toggleMenu} className="navbar-logo">RasaSetu</Link>
 
-      {/* Mobile Navigation Links */}
-      <div className={`navbar-links ${isMobileMenuOpen ? 'open' : ''}`}>
+      <ul className={`navbar-links ${isMobileMenuOpen ? 'open' : ''}`}>
         <li><Link to="/" onClick={toggleMenu}>Home</Link></li>
-        
-        {/* Mood Selector Link, disabled if not logged in */}
+        <li>
+          <Link 
+            to="/emotionalspectrum" 
+            onClick={toggleMenu}
+            className={!user ? 'disabled' : ''}
+            aria-disabled={!user}
+          >
+            Emotional Control
+          </Link>
+        </li>
         <li>
           <Link 
             to="/mood" 
-            onClick={toggleMenu} 
-            className={user ? '' : 'disabled'}
-            aria-disabled={user ? 'false' : 'true'}
+            onClick={toggleMenu}
+            className={!user ? 'disabled' : ''}
+            aria-disabled={!user}
           >
             Mood Selector
           </Link>
         </li>
-
-        {/* Express Mode Link, disabled if not logged in */}
         <li>
           <Link 
             to="/express-mode" 
-            onClick={toggleMenu} 
-            className={user ? '' : 'disabled'}
-            aria-disabled={user ? 'false' : 'true'}
+            onClick={toggleMenu}
+            className={!user ? 'disabled' : ''}
+            aria-disabled={!user}
           >
-            Express Mode
+            Soothing ASMR
           </Link>
         </li>
-
-        {/* Journal Link, disabled if not logged in */}
         <li>
           <Link 
             to="/journal" 
-            onClick={toggleMenu} 
-            className={user ? '' : 'disabled'}
-            aria-disabled={user ? 'false' : 'true'}
+            onClick={toggleMenu}
+            className={!user ? 'disabled' : ''}
+            aria-disabled={!user}
           >
-            Journal
+            Emotions Tracker
           </Link>
         </li>
-      </div>
+      </ul>
 
-      {/* Desktop Authentication Links or User Dropdown */}
       <div className="navbar-auth desktop-auth">
         {!user ? (
           <>
@@ -84,35 +79,26 @@ const Navbar = () => {
           </>
         ) : (
           <div className="user-dropdown">
-            {/* User Avatar */}
             <img 
               src={user.photoURL || '/images/default-avatar.png'} 
-              alt="User" 
-              className="user-avatar" 
-              aria-label="User Profile" 
+              alt="User Avatar" 
+              className="user-avatar"
             />
-            {/* Dropdown Menu */}
             <div className="dropdown-content">
               <p>{user.displayName || 'User'}</p>
-
-              {/* Profile Link */}
-              <Link to="/profile" className="dropdown-link" onClick={toggleMenu}>
-                Profile
-              </Link>
-
-              {/* Logout */}
+              <Link to="/profile" className="dropdown-link" onClick={toggleMenu}>Profile</Link>
               <button onClick={handleLogout} aria-label="Logout">Logout</button>
             </div>
           </div>
         )}
       </div>
 
-      {/* Mobile Hamburger Menu */}
       <div 
-        className={`hamburger ${isMobileMenuOpen ? 'open' : ''}`} 
+        className={`hamburger ${isMobileMenuOpen ? 'open' : ''}`}
         onClick={toggleMenu}
-        aria-label="Toggle navigation menu"
+        aria-label="Toggle Menu"
       >
+        <span></span>
         <span></span>
         <span></span>
         <span></span>

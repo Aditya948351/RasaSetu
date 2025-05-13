@@ -1,23 +1,29 @@
-/* Navbar Style */
+* {
+  transition: all 0.3s ease-in-out;
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
-  background: #eef2f3;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1rem 2rem 1rem 1rem;
+  background: rgba(238, 242, 243, 0.95);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   font-family: 'Segoe UI', sans-serif;
-  position: relative;
-  z-index: 10;
+  position: fixed;
+  top: 0;
+  width: 98%;
+  z-index: 100;
 }
 
 .navbar-logo {
   font-size: 1.8rem;
   font-weight: bold;
   color: #3f51b5;
+  text-decoration: none;
 }
 
-/* Navbar Links */
 .navbar-links {
   list-style: none;
   display: flex;
@@ -28,211 +34,129 @@
   text-decoration: none;
   color: #333;
   font-weight: 500;
-  transition: color 0.3s ease;
+  position: relative;
 }
 
-.navbar-links li a:hover {
-  color: #3f51b5;
+.navbar-links li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: #3f51b5;
+  left: 0;
+  bottom: -4px;
+  transition: width 0.3s;
 }
 
-/* Disabled Links */
-.navbar-links .disabled {
+.navbar-links li a:hover::after {
+  width: 100%;
+}
+
+.disabled {
   pointer-events: none;
   opacity: 0.6;
   cursor: not-allowed;
 }
 
-.navbar-links .disabled:hover {
-  opacity: 0.6;  /* Optional: Disable hover effect on disabled links */
-}
-
-/* Button Styling */
 .navbar-auth .btn {
   margin-left: 1rem;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1.2rem;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 0.95rem;
   border: none;
-  border-radius: 20px;
-  cursor: pointer;
-  font-weight: 500;
-  transition: background 0.3s ease;
+  box-shadow: 0 4px 8px rgba(63, 81, 181, 0.2);
+  transition: transform 0.2s, box-shadow 0.3s;
 }
 
 .btn.login {
   background: transparent;
   color: #3f51b5;
-  border: 1px solid #3f51b5;
+  border: 1.5px solid #3f51b5;
 }
-
 .btn.signup {
   background: #3f51b5;
-  color: #fff;
+  color: white;
 }
 
 .btn.login:hover {
-  background: #3f51b5;
-  color: #fff;
+  background-color: #3f51b5;
+  color: white;
 }
-
 .btn.signup:hover {
-  background: #303f9f;
+  background-color: #303f9f;
 }
 
-/* Mobile Navigation */
 .hamburger {
   display: none;
   flex-direction: column;
-  cursor: pointer;
   gap: 5px;
+  cursor: pointer;
 }
-
 .hamburger span {
   height: 3px;
   width: 25px;
-  background-color: #3f51b5;
-  transition: all 0.3s ease;
+  background: #3f51b5;
   border-radius: 5px;
 }
-
 .hamburger.open span:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
-
 .hamburger.open span:nth-child(2) {
   opacity: 0;
 }
-
 .hamburger.open span:nth-child(3) {
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* Mobile Auth Section */
-.mobile-auth {
-  display: none;
-  flex-direction: column;
-  gap: 0.5rem;
-  margin-top: 1rem;
-}
-
-@media (max-width: 768px) {
-  .navbar-links {
-    position: absolute;
-    top: 70px;
-    right: 0;
-    background: #eef2f3;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-    padding: 1rem 2rem;
-    display: none;
-  }
-
-  .navbar-links.open {
-    display: flex;
-  }
-
-  .desktop-auth {
-    display: none;
-  }
-
-  .mobile-auth {
-    display: flex;
-  }
-
-  .hamburger {
-    display: flex;
-  }
-}
-
-/* User Avatar and Dropdown */
 .user-dropdown {
   position: relative;
-  display: inline-block;
 }
-
 .user-avatar {
   width: 40px;
   height: 40px;
   border-radius: 50%;
   cursor: pointer;
-  background-color: #f0f0f0;
   object-fit: cover;
+  background: #eee;
 }
-
-.user-avatar img {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-}
-
-/* Dropdown Styling */
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #fff;
-  min-width: 160px;
+  background: #fff;
   border: 1px solid #ddd;
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-  right: 0;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   padding: 10px;
   text-align: center;
+  right: 0;
+  z-index: 10;
 }
-
 .user-dropdown:hover .dropdown-content {
   display: block;
 }
 
-.dropdown-content p {
-  margin: 0;
-  padding: 5px 0;
-}
-
-.dropdown-content button {
-  width: 100%;
-  padding: 8px 0;
-  background-color: #ff5c5c;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-
-.dropdown-content button:hover {
-  background-color: #e04f4f;
-}
-
-.dropdown-link {
-  display: block;
-  text-decoration: none;
-  color: #333;
-  margin-bottom: 10px;
-  transition: color 0.2s ease;
-}
-
-.dropdown-link:hover {
-  color: #0077cc;
-}
-
-/* Hover Effect for Avatar */
-.user-avatar:hover {
-  opacity: 0.8;
-}
-
-/* Navbar Link Transition Effect */
-.navbar-links {
-  display: flex;
-  justify-content: space-around;
-  transition: transform 0.3s ease-in-out;
-}
-
-.navbar-links.open {
-  transform: translateX(0);
-}
-
-.navbar-links li {
-  list-style: none;
-  margin: 1rem;
-}
-
-.hamburger.open {
-  transform: rotate(90deg);
+@media (max-width: 768px) {
+  .navbar-links {
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: #eef2f3;
+    width: 90%;
+    padding: 1rem 2rem;
+    transform: translateX(100%);
+    opacity: 0;
+    pointer-events: none;
+  }
+  .navbar-links.open {
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .desktop-auth {
+    display: none;
+  }
+  .hamburger {
+    display: flex;
+  }
 }

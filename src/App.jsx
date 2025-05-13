@@ -22,7 +22,7 @@ const App = () => {
         <br />
         <Routes>
           {/* Home Page */}
-          <Route path="/" element={<><HeroSection isLoggedIn={isLoggedIn} /> <br /> <EmotionalSpectrum /></>} />
+          <Route path="/" element={<><HeroSection isLoggedIn={isLoggedIn} /></>} />
 
           {/* Login & Signup */}
           <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} />} />
@@ -30,6 +30,9 @@ const App = () => {
 
           {/* Mood Selector Page */}
           <Route path="/mood" element={<MoodSelector />} />
+          
+          {/*Emotional Spectrum Page*/}
+          <Route path="/emotionalspectrum" element={<EmotionalSpectrum/>} />
 
           {/* Express Mode Page */}
           <Route path="/express-mode" element={<ExpressMode />} />
