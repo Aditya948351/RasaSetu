@@ -13,7 +13,7 @@
   font-family: 'Segoe UI', sans-serif;
   position: fixed;
   top: 0;
-  width: 98%;
+  width: 100%;
   z-index: 100;
 }
 
@@ -142,7 +142,7 @@
     top: 70px;
     right: 0;
     background: #eef2f3;
-    width: 90%;
+    width: 100%;
     padding: 1rem 2rem;
     transform: translateX(100%);
     opacity: 0;
