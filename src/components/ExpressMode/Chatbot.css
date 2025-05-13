@@ -1,0 +1,110 @@
+/* Chatbot Container */
+.chatbot-container {
+  max-width: 800px;
+  margin: 50px auto;
+  background-color: #f9f9fb;
+  border-radius: 16px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  padding: 32px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Chatbot Title */
+.chatbot-container h3 {
+  text-align: center;
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 24px;
+}
+
+/* Chatbox Area */
+.chatbox {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Bot Response Styling */
+.bot-response {
+  background-color: #eaf4ff;
+  border-left: 6px solid #007bff;
+  padding: 20px;
+  border-radius: 8px;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Mood Playlist Videos */
+.video-playlist {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+/* Video Title */
+.video-playlist strong {
+  display: block;
+  margin-bottom: 8px;
+  color: #1a1a1a;
+  font-size: 18px;
+}
+
+/* Input Box */
+.chatbox input[type="text"] {
+  padding: 14px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.chatbox input[type="text"]:focus {
+  border-color: #007bff;
+}
+
+/* Send Button */
+.chatbox button {
+  padding: 12px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.chatbox button:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive Video */
+.video-playlist iframe {
+  width: 100%;
+  max-width: 100%;
+  height: 315px;
+  border-radius: 8px;
+  border: none;
+}
+
+/* Responsive Design for Small Screens */
+@media (max-width: 600px) {
+  .chatbot-container {
+    padding: 20px;
+  }
+
+  .chatbot-container h3 {
+    font-size: 22px;
+  }
+
+  .chatbox input[type="text"],
+  .chatbox button {
+    font-size: 15px;
+  }
+
+  .video-playlist iframe {
+    height: 200px;
+  }
+}

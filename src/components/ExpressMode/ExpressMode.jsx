@@ -19,7 +19,7 @@ const DinosaurGame = () => {
   return (
     <div className="game-container">
       <h3>Free Online Games</h3>
-      {/* The game UI or implementation */}
+      {/* The game UI or implementation Need to call this Create a separate Issue For this and Let me have Your Changes to be known*/}
       <iframe
         src="https://www.crazygames.com/"
         width="100%"
@@ -121,6 +121,9 @@ const ExpressMode = () => {
             className="mode-switch"
           />
         </div>
+        {/* Background Music this should be removed */}
+        <audio id="bg-music">
+        </audio>
 
         {/* Premium Mode Features */}
         {isPremium ? (
@@ -225,11 +228,6 @@ const ExpressMode = () => {
             </li>
           </ul>
         </div>
-
-        {/* Background Music */}
-        <audio id="bg-music" loop>
-          <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3" />
-        </audio>
       </div>
     </div>
   );

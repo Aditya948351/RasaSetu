@@ -6,8 +6,8 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-content">
         <div className="footer-brand">
-          <h2>MoodMuse</h2>
-          <p>Emotion-powered content to uplift your day.</p>
+          <h2>RasaSetu</h2>
+          <p>Emotion based content Recommender to uplift your day.</p>
         </div>
 
         <div className="footer-links">

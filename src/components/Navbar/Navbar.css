@@ -17,6 +17,42 @@
   z-index: 100;
 }
 
+.navbar-logo-img {
+  height: 50px;         /* or whatever size suits your UI */
+  width: auto;
+  object-fit: fill;
+  display: block;
+}
+
+.logo-wrapper {
+  height: 45px;              /* slightly less than the image height */
+  overflow: hidden;          /* hide the bottom part */
+  display: flex;
+  align-items: center;
+}
+
+
+.navbar {
+  transition: top 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  background: rgba(238, 242, 243, 0.9); /* Slightly more transparent */
+  backdrop-filter: blur(10px);
+}
+
+/* Hide navbar when scrolling down */
+.navbar-hidden {
+  top: -100px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+
+
+/* Show when scrolling up */
+.navbar {
+  top: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
 .navbar-logo {
   font-size: 1.8rem;
   font-weight: bold;
