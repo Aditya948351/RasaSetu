@@ -44,20 +44,14 @@ const Navbar = () => {
 
   return (
     <nav className={`navbar ${hideNavbar ? 'navbar-hidden' : ''}`}>
-      <Link to="/" onClick={toggleMenu} className="navbar-logo">
-        <Link to="/" onClick={toggleMenu} className="navbar-logo">
-          <div className='logo-wrapper'>
-            <img src="https://github.com/Aditya948351/RasaSetu/blob/main/src/assets/RasaSetu-Icon.jpg?raw=true" alt="RasaSetu Logo" className="navbar-logo-img" />
-          </div>  
-        </Link>
-      </Link>
+    <Link to="/" onClick={toggleMenu} className="navbar-logo">
+      <div className='logo-wrapper'>
+        <img src="..." alt="RasaSetu Logo" className="navbar-logo-img" />
+      </div>
+    </Link> 
 
       <ul className={`navbar-links ${isMobileMenuOpen ? 'open' : ''}`}>
-        <li><Link to="/" onClick={toggleMenu} className="navbar-logo">
-  <div className='logo-wrapper'>
-    <img src="..." alt="RasaSetu Logo" className="navbar-logo-img" />
-  </div>
-</Link></li>
+        <li><Link to="/" onClick={toggleMenu}>Home</Link></li>
         <li><Link to="/emotionalspectrum" onClick={toggleMenu} className={!user ? 'disabled' : ''}>Emotional Control</Link></li>
         <li><Link to="/mood" onClick={toggleMenu} className={!user ? 'disabled' : ''}>Mood Selector</Link></li>
         <li><Link to="/express-mode" onClick={toggleMenu} className={!user ? 'disabled' : ''}>Soothing ASMR</Link></li>
