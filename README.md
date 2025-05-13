@@ -86,7 +86,12 @@
 
 If you're passionate about emotional wellness, cultural tech, or AI for good, feel free to contribute or reach out for collaborations.
 
-📫 Contact: [Your Email or GitHub]
+<h2>📫 Contact:</h2>
+<p>
+  <a href="https://github.com/Aditya948351" />
+    Github
+</p>
+
 
 ---
 
