@@ -81,7 +81,7 @@ const Signup = () => {
 
   return (
     <div className="signup-container">
-      <span class="brain-icon">🧠</span>
+      <span className="brain-icon">🧠</span>
       <h2>Create Your RasaSetu Account</h2>
       <form onSubmit={handleSubmit} className="signup-form" noValidate>
         {error && <div className="error-message">{error}</div>}
