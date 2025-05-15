@@ -44,15 +44,6 @@ Here are a few ways you can get involved:
 
 ---
 
-## 🎨 Code Style Guidelines
-
-- Follow **PEP8** for Python code.
-- Use clear and descriptive names.
-- Include **docstrings** for all functions and classes.
-- Format code using tools like `black` or `flake8`.
-
----
-
 ## 💬 Commit Message Convention
 
 Structure your commit messages like:
