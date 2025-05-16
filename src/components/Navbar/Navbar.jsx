@@ -4,21 +4,27 @@ import './Navbar.css';
 import { auth } from '../../firebase';
 import { signOut } from 'firebase/auth';
 
-const Navbar = () => {
-  const [isMobileMenuOpen, setIsMobileMenuMenuOpen] = useState(false);
+const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [user, setUser] = useState(null);
   const [hideNavbar, setHideNavbar] = useState(false);
   const [prevScrollPos, setPrevScrollPos] = useState(window.scrollY);
 
   useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((user) => {
-      setUser(user || null);
+    const unsubscribe = auth.onAuthStateChanged((firebaseUser) => {
+      setUser(firebaseUser || null);
+      setIsLoggedIn(!!firebaseUser); // Sync to App.jsx
+      localStorage.setItem('isLoggedIn', !!firebaseUser);
     });
     return () => unsubscribe();
-  }, []);
+  }, [setIsLoggedIn]);
 
   const handleLogout = () => {
-    signOut(auth).then(() => setUser(null));
+    signOut(auth).then(() => {
+      setUser(null);
+      setIsLoggedIn(false);
+      localStorage.removeItem('isLoggedIn');
+    });
   };
 
   const toggleMenu = () => {
@@ -28,27 +34,20 @@ const Navbar = () => {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollPos = window.scrollY;
-
-      if (currentScrollPos > prevScrollPos && currentScrollPos > 80) {
-        setHideNavbar(true); // hide navbar
-      } else {
-        setHideNavbar(false); // show navbar
-      }
-
+      setHideNavbar(currentScrollPos > prevScrollPos && currentScrollPos > 80);
       setPrevScrollPos(currentScrollPos);
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, [prevScrollPos]);
 
   return (
     <nav className={`navbar ${hideNavbar ? 'navbar-hidden' : ''}`}>
-    <Link to="/" onClick={toggleMenu} className="navbar-logo">
-      <div className='logo-wrapper'>
-        <img src="https://github.com/Aditya948351/RasaSetu/blob/main/src/assets/RasaSetu-Icon.jpg?raw=true" alt="RasaSetu Logo" className="navbar-logo-img" />
-      </div>
-    </Link> 
+      <Link to="/" onClick={toggleMenu} className="navbar-logo">
+        <div className="logo-wrapper">
+          <img src="https://github.com/Aditya948351/RasaSetu/blob/main/src/assets/RasaSetu-Icon.jpg?raw=true" alt="RasaSetu Logo" className="navbar-logo-img" />
+        </div>
+      </Link>
 
       <ul className={`navbar-links ${isMobileMenuOpen ? 'open' : ''}`}>
         <li><Link to="/" onClick={toggleMenu}>Home</Link></li>
