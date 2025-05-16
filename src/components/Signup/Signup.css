@@ -17,6 +17,7 @@
 }
 
 .brain-icon {
+  display: block;
   text-align: center;
   font-size: 2rem;
 }
