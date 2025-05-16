@@ -81,17 +81,18 @@ const Signup = () => {
 
   return (
     <div className="signup-container">
-      <h2>Create Your RasaSetu Account 🧠</h2>
+      <span className="brain-icon">🧠</span>
+      <h2>Create Your RasaSetu Account</h2>
       <form onSubmit={handleSubmit} className="signup-form" noValidate>
         {error && <div className="error-message">{error}</div>}
 
         {/* Name Fields */}
         <div className="name-fields">
-          <div>
+          <div className="name-fields">
             <label htmlFor="firstName">First Name</label>
             <input id="firstName" name="firstName" value={formData.firstName} onChange={handleChange} required />
           </div>
-          <div>
+          <div className="name-fields">
             <label htmlFor="lastName">Last Name</label>
             <input id="lastName" name="lastName" value={formData.lastName} onChange={handleChange} required />
           </div>
