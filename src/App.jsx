@@ -13,37 +13,22 @@ import Profile from './components/Profile/Profile';
 import ExternalSitePage from './components/ExternalSitePage/ExternalSitePage';
 
 const App = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);  // Track login state
+  const [isLoggedIn, setIsLoggedIn] = useState(false);  // Unified auth state
 
   return (
     <Router>
       <div>
-        <Navbar />
+        <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
         <br />
         <Routes>
-          {/* Home Page */}
-          <Route path="/" element={<><HeroSection isLoggedIn={isLoggedIn} /></>} />
-
-          {/* Login & Signup */}
+          <Route path="/" element={<HeroSection isLoggedIn={isLoggedIn} />} />
           <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} />} />
           <Route path="/signup" element={<Signup />} />
-
-          {/* Mood Selector Page */}
           <Route path="/mood" element={<MoodSelector />} />
-          
-          {/*Emotional Spectrum Page*/}
-          <Route path="/emotionalspectrum" element={<EmotionalSpectrum/>} />
-
-          {/* Express Mode Page */}
+          <Route path="/emotionalspectrum" element={<EmotionalSpectrum />} />
           <Route path="/express-mode" element={<ExpressMode />} />
-
-          {/* Journal Page */}
           <Route path="/journal" element={<Journal />} />
-
-          {/* Profile Page */}
           <Route path="/profile" element={<Profile />} />
-
-          {/* External site */}
           <Route path="/external" element={<ExternalSitePage />} />
         </Routes>
         <br />

@@ -11,7 +11,7 @@ const HeroSection = ({ isLoggedIn }) => {
           <p className="hero-subtitle">
             Your personal guide to emotional clarity and content therapy. Track your feelings, reflect deeply, and get content that heals.
           </p>
-          {/* ✅ Updated to Link for internal routing */}
+          {/* */}
           <Link 
             to="/external" 
             className="hero-button" 
