@@ -12,7 +12,7 @@
 /* Dark mode background */
 @media (prefers-color-scheme: dark) {
   .profile-container {
-    background: linear-gradient(to bottom, var(--gray-900, #111827), var(--gray-800, #1f2937));
+    background: linear-gradient(to bottom, var(--gray-900, #f96b0c), var(--gray-800, #05ff3b));
   }
 }
 
@@ -66,7 +66,7 @@
 
 @media (prefers-color-scheme: dark) {
   .not-logged-in {
-    background-color: var(--card, #1f2937);
+    background-color: var(--card, #ff3bc4);
     color: white;
   }
 }
@@ -104,7 +104,7 @@
 
 @media (prefers-color-scheme: dark) {
   .profile-card {
-    background-color: var(--card, #1f2937);
+    background-color: var(--card, #ff57c7);
     color: white;
   }
 }

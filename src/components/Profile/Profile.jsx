@@ -4,6 +4,7 @@ import { doc, getDoc } from 'firebase/firestore';
 import { auth, db } from '@/firebase';
 import { motion } from 'framer-motion';
 import { User, Mail, Phone, Calendar, UserCircle, LogOut, Settings, Shield } from 'lucide-react';
+import '../NodeDisplay.tsx'
 import './Profile.css';
 
 const Profile = () => {
@@ -214,5 +215,7 @@ const ProfileItem = ({ icon, label, value }) => (
     </div>
   </div>
 );
+
+
 
 export default Profile;
