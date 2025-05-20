@@ -108,19 +108,14 @@ const ExpressMode = () => {
       <div className="express-mode-content">
         <h2 className="page-title">🌿 Express Mode: Relax, Breathe & Play</h2>
 
-        {/* Mode Toggle */}
         <div className="mode-toggle">
-          <label htmlFor="mode-switch" className="mode-label">
-            Switch Mode
+          <span className="mode-label">Mode: {isPremium ? "Premium" : "Free"}</span>
+          <label className="switch">
+            <input type="checkbox" checked={isPremium} onChange={toggleMode} />
+            <span className="slider round"></span>
           </label>
-          <input
-            type="checkbox"
-            id="mode-switch"
-            checked={isPremium}
-            onChange={toggleMode}
-            className="mode-switch"
-          />
         </div>
+
         {/* Background Music this should be removed */}
         <audio id="bg-music">
         </audio>
