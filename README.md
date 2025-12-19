@@ -15,8 +15,6 @@
   🚀 <a href="https://rasasetu-margvedha.netlify.app/" target="_blank">Live Deployment</a>
 </p>
 
-<h4 align="center">🖼️ Powered by <strong>Unsplash API</strong> for dynamic emotional imagery</h4>
-
 ---
 
 ## 🧠 Problem Statement
